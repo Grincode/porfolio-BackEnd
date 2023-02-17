@@ -5,6 +5,7 @@ import com.example.demo.Entity.Persona;
 import com.example.demo.Interface.IPersonaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,8 +20,14 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Grincode
  */
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 public class PersonaController {
     @Autowired IPersonaService ipersonaService;
+    
+    @GetMapping("/personas/traer/perfil")
+    public Persona findPersona(){
+        return ipersonaService.findPersona((long)1);
+    }
     
     @GetMapping("/personas/traer")
     public List<Persona> getPersona(){
@@ -33,7 +40,7 @@ public class PersonaController {
         return "Persona creada correctamente";
     }
     
-    @DeleteMapping("personas/borrar/{id}")
+    @DeleteMapping("/personas/borrar/{id}")
     public String deletePersona(@PathVariable Long id){
         ipersonaService.deletePersona(id);
         return "Se borro la persona";
