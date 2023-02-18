@@ -15,7 +15,6 @@ import org.springframework.stereotype.Repository;
  * @author Grincode
  */
 @Repository
-public interface iRolRepository extends JpaRepository<Rol, Integer> {
-   Optional<Rol> findByRolNombre(RolNombre rolNombre); 
-    
+public interface iRolRepository extends JpaRepository<Rol, Integer>{
+    Optional<Rol> findByRolNombre(RolNombre rolNombre);
 }
