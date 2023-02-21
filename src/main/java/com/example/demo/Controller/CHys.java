@@ -28,7 +28,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Grincode
  */
 @RestController
-@CrossOrigin(origins = {"https://frontend-argprog-f2b88.web.app","http://localhost:4200"})
+@CrossOrigin(origins = "https://frontend-argprog-f2b88.web.app")
 @RequestMapping("/skill")
 public class CHys {
 

@@ -18,10 +18,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  *
- * @author Grincode
+ * @author Grincode 
  */
 @RestController
-@CrossOrigin(origins = {"https://frontend-argprog-f2b88.web.app","http://localhost:4200"})
+@CrossOrigin(origins = "https://frontend-argprog-f2b88.web.app")
 public class PersonaController {
     @Autowired IPersonaService ipersonaService;
     
