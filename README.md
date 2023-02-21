@@ -10,5 +10,5 @@ Base de datos y control de acceso mediante Jwt
 ### Technologies / Built With
 - ✨ Springboot
 - ✨ Jwt
-- 💣 JAVA
+- 💣 Java
 
