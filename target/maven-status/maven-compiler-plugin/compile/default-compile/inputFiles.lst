@@ -10,7 +10,6 @@ D:\BASE\F_BackEnd\porfolio\src\main\java\com\example\demo\Service\Seducacion.jav
 D:\BASE\F_BackEnd\porfolio\src\main\java\com\example\demo\PorfolioApplication.java
 D:\BASE\F_BackEnd\porfolio\src\main\java\com\example\demo\Security\Service\RolService.java
 D:\BASE\F_BackEnd\porfolio\src\main\java\com\example\demo\Entity\Experiencia.java
-D:\BASE\F_BackEnd\porfolio\src\main\java\com\example\demo\Interface\IPersonaService.java
 D:\BASE\F_BackEnd\porfolio\src\main\java\com\example\demo\Security\Dto\JwtDto.java
 D:\BASE\F_BackEnd\porfolio\src\main\java\com\example\demo\Security\Dto\LoginUsuario.java
 D:\BASE\F_BackEnd\porfolio\src\main\java\com\example\demo\Security\Controller\Mensaje.java
