@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Grincode 
  */
 @RestController
-@CrossOrigin(origins = "https://frontend-argprog-f2b88.web.app")
+@CrossOrigin(origins = {"https://frontend-argprog-f2b88.web.app","http://localhost:4200"})
 public class PersonaController {
     @Autowired IPersonaService ipersonaService;
     
