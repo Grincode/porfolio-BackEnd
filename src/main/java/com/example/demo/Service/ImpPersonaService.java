@@ -43,7 +43,7 @@ public class ImpPersonaService {
          return ipersonaRepository.existsById(id);
      }
      
-     public boolean existsByNombreE(String nombre){
+     public boolean existsByNombre(String nombre){
          return ipersonaRepository.existsByNombre(nombre);
      }
     
