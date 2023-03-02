@@ -14,7 +14,7 @@ public class dtoPersona {
     private String apellido;
     @NotBlank
     private String descripcion;
-    @NotBlank
+    
     private String img;
 
     public dtoPersona() {
