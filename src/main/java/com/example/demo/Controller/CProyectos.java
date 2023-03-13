@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Grincode
  */
 @RestController
-@RequestMapping("/proyect")
+@RequestMapping("/proyectos")
 @CrossOrigin(origins = {"https://frontend-argprog-f2b88.web.app", "http://localhost:4200"})
 public class CProyectos {
 
