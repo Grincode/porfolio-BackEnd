@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.example.demo.Dto;
 
 import javax.validation.constraints.NotBlank;
@@ -10,18 +7,16 @@ import javax.validation.constraints.NotBlank;
  *
  * @author Grincode
  */
-public class dtoProyectos {
-    
-
+public class dtoProyecto {
     @NotBlank
     private String nombreP;
     @NotBlank
     private String descripcionP;
 
-    public dtoProyectos() {
+    public dtoProyecto() {
     }
 
-    public dtoProyectos(String nombreP, String descripcionP) {
+    public dtoProyecto (String nombreP, String descripcionP) {
         this.nombreP = nombreP;
         this.descripcionP = descripcionP;
     }

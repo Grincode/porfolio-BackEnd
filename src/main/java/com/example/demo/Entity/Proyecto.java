@@ -8,34 +8,26 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 /**
  *
  * @author juanp
  */
 @Entity
-public class Proyectos {
+public class Proyecto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @NotNull
-    @Size(min = 1, max = 100, message = "No cumple con los requisitos")
     private String nombreP;
-    @NotNull
     private String descripcionP;
 
-    private String img;
-
-    public Proyectos() {
+    public Proyecto() {
     }
 
-    public Proyectos(String nombreP, String descripcionP) {
+    public Proyecto(String nombreP, String descripcionP) {
         this.nombreP = nombreP;
         this.descripcionP = descripcionP;
-        this.img = img;
     }
 
     public int getId() {
@@ -60,14 +52,6 @@ public class Proyectos {
 
     public void setDescripcionP(String descripcionP) {
         this.descripcionP = descripcionP;
-    }
-
-    public String getImg() {
-        return img;
-    }
-
-    public void setImg(String img) {
-        this.img = img;
     }
 
 }

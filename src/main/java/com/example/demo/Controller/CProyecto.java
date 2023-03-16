@@ -1,10 +1,10 @@
 
 package com.example.demo.Controller;
 
-import com.example.demo.Dto.dtoProyectos;
-import com.example.demo.Entity.Proyectos;
+import com.example.demo.Dto.dtoProyecto;
+import com.example.demo.Entity.Proyecto;
 import com.example.demo.Security.Controller.Mensaje;
-import com.example.demo.Service.SProyectos;
+import com.example.demo.Service.SProyecto;
 import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,71 +27,66 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/proyectos")
 @CrossOrigin(origins = {"https://frontend-argprog-f2b88.web.app", "http://localhost:4200"})
-public class CProyectos {
+public class CProyecto {
 
     @Autowired
-    SProyectos sProyectos;
-
+    SProyecto sProyecto;
+    
     @GetMapping("/lista")
-    public ResponseEntity<List<Proyectos>> list() {
-        List<Proyectos> list = sProyectos.list();
+    public ResponseEntity<List<Proyecto>> list(){
+        List<Proyecto> list = sProyecto.list();
         return new ResponseEntity(list, HttpStatus.OK);
     }
-
+    
     @GetMapping("/detail/{id}")
-    public ResponseEntity<Proyectos> getById(@PathVariable("id") int id) {
-        if (!sProyectos.existsById(id)){
+    public ResponseEntity<Proyecto> getById(@PathVariable("id") int id){
+        if(!sProyecto.existsById(id))
             return new ResponseEntity(new Mensaje("no existe"), HttpStatus.NOT_FOUND);
-        }
-        Proyectos proyectos = sProyectos.getOne(id).get();
-        return new ResponseEntity(proyectos, HttpStatus.OK);
+        Proyecto proyecto = sProyecto.getOne(id).get();
+        return new ResponseEntity(proyecto, HttpStatus.OK);
     }
-
+    
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> delete(@PathVariable("id") int id) {
-        if (!sProyectos.existsById(id)) {
-            return new ResponseEntity(new Mensaje("no existe"), HttpStatus.NOT_FOUND);
+        if (!sProyecto.existsById(id)) {
+            return new ResponseEntity(new Mensaje("no existe el proyecto"), HttpStatus.NOT_FOUND);
         }
-        sProyectos.delete(id);
-        return new ResponseEntity(new Mensaje("producto eliminado"), HttpStatus.OK);
+        sProyecto.delete(id);
+        return new ResponseEntity(new Mensaje("proyecto eliminado"), HttpStatus.OK);
     }
 
+    
     @PostMapping("/create")
-    public ResponseEntity<?> create(@RequestBody dtoProyectos dtoproyect) {
-        if (StringUtils.isBlank(dtoproyect.getNombreP())) {
+    public ResponseEntity<?> create(@RequestBody dtoProyecto dtoproyecto){      
+        if(StringUtils.isBlank(dtoproyecto.getNombreP()))
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
-        }
-        if (sProyectos.existsByNombreP(dtoproyect.getNombreP())) {
+        if(sProyecto.existsByNombreP(dtoproyecto.getNombreP()))
             return new ResponseEntity(new Mensaje("Ese proyecto ya existe"), HttpStatus.BAD_REQUEST);
-        }
-
-        Proyectos proyectos= new Proyectos(dtoproyect.getNombreP(), dtoproyect.getDescripcionP());
-        sProyectos.save(proyectos);
-
+        
+        Proyecto proyecto = new Proyecto(dtoproyecto.getNombreP(), dtoproyecto.getDescripcionP());
+        sProyecto.save(proyecto);
+        
         return new ResponseEntity(new Mensaje("Proyecto agregado"), HttpStatus.OK);
     }
-
+    
     @PutMapping("/update/{id}")
-    public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody dtoProyectos dtoproyect) {
+    public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody dtoProyecto dtoproyecto){
         //Validamos si existe el ID
-        if (!sProyectos.existsById(id)) {
+        if(!sProyecto.existsById(id))
             return new ResponseEntity(new Mensaje("El ID no existe"), HttpStatus.BAD_REQUEST);
-        }
-        //Compara nombre de proyectos
-        if (sProyectos.existsByNombreP(dtoproyect.getNombreP()) && sProyectos.getByNombreP(dtoproyect.getNombreP()).get().getId() != id) {
+        //Compara nombre de experiencias
+        if(sProyecto.existsByNombreP(dtoproyecto.getNombreP()) && sProyecto.getByNombreP(dtoproyecto.getNombreP()).get().getId() != id)
             return new ResponseEntity(new Mensaje("Ese proyecto ya existe"), HttpStatus.BAD_REQUEST);
-        }
         //No puede estar vacio
-        if (StringUtils.isBlank(dtoproyect.getNombreP())) {
+        if(StringUtils.isBlank(dtoproyecto.getNombreP()))
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
-        }
-
-        Proyectos proyectos = sProyectos.getOne(id).get();
-        proyectos.setNombreP(dtoproyect.getNombreP());
-        proyectos.setDescripcionP((dtoproyect.getDescripcionP()));
-
-        sProyectos.save(proyectos);
+        
+        Proyecto proyecto = sProyecto.getOne(id).get();
+        proyecto.setNombreP(dtoproyecto.getNombreP());
+        proyecto.setDescripcionP((dtoproyecto.getDescripcionP()));
+        
+        sProyecto.save(proyecto);
         return new ResponseEntity(new Mensaje("Proyecto actualizado"), HttpStatus.OK);
-
+             
     }
 }
