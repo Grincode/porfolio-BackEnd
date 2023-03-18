@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.example.demo.Entity;
 
 import javax.persistence.Entity;
@@ -11,7 +8,7 @@ import javax.persistence.Id;
 
 /**
  *
- * @author juanp
+ * @author Grincode
  */
 @Entity
 public class Proyecto {
@@ -21,13 +18,15 @@ public class Proyecto {
     private int id;
     private String nombreP;
     private String descripcionP;
+    private String img;
 
     public Proyecto() {
     }
 
-    public Proyecto(String nombreP, String descripcionP) {
+    public Proyecto(String nombreP, String descripcionP, String img) {
         this.nombreP = nombreP;
         this.descripcionP = descripcionP;
+        this.img  =  img;
     }
 
     public int getId() {
@@ -52,6 +51,14 @@ public class Proyecto {
 
     public void setDescripcionP(String descripcionP) {
         this.descripcionP = descripcionP;
+    }
+    
+        public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
     }
 
 }
