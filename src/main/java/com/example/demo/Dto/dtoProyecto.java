@@ -1,4 +1,3 @@
-
 package com.example.demo.Dto;
 
 import javax.validation.constraints.NotBlank;
@@ -8,20 +7,28 @@ import javax.validation.constraints.NotBlank;
  * @author Grincode
  */
 public class dtoProyecto {
+
     @NotBlank
     private String nombreP;
     @NotBlank
     private String descripcionP;
     @NotBlank
-    private String img;
+    private String imagenP;
+    @NotBlank
+    private String fechaP;
+    @NotBlank
+    private String linkP;
 
     public dtoProyecto() {
     }
 
-    public dtoProyecto (String nombreP, String descripcionP, String img) {
+    public dtoProyecto(String nombreP, String descripcionP, String imagenP, String fechaP, String linkP) {
         this.nombreP = nombreP;
         this.descripcionP = descripcionP;
-        this.img = img;
+        this.imagenP = imagenP;
+        this.fechaP = fechaP;
+        this.linkP = linkP;
+
     }
 
     public String getNombreP() {
@@ -40,14 +47,28 @@ public class dtoProyecto {
         this.descripcionP = descripcionP;
     }
 
-    public String getImg() {
-        return img;
+    public String getImagenP() {
+        return imagenP;
     }
 
-    public void setImg(String img) {
-        this.img = img;
+    public void setImagenP(String imagenP) {
+        this.imagenP = imagenP;
     }
 
-    
+    public String getFechaP() {
+        return fechaP;
+    }
+
+    public void setFechaP(String fechaP) {
+        this.fechaP = fechaP;
+    }
+
+    public String getLinkP() {
+        return linkP;
+    }
+
+    public void setLinkP(String linkP) {
+        this.linkP = linkP;
+    }
 
 }

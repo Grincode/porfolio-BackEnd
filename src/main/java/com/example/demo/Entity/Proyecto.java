@@ -1,4 +1,3 @@
-
 package com.example.demo.Entity;
 
 import javax.persistence.Entity;
@@ -18,15 +17,19 @@ public class Proyecto {
     private int id;
     private String nombreP;
     private String descripcionP;
-    private String img;
+    private String imagenP;
+    private String fechaP;
+    private String linkP;
 
     public Proyecto() {
     }
 
-    public Proyecto(String nombreP, String descripcionP, String img) {
+    public Proyecto(String nombreP, String descripcionP, String imagenP, String fechaP, String linkP) {
         this.nombreP = nombreP;
         this.descripcionP = descripcionP;
-        this.img  =  img;
+        this.imagenP = imagenP;
+        this.fechaP = fechaP;
+        this.linkP = linkP;
     }
 
     public int getId() {
@@ -52,13 +55,29 @@ public class Proyecto {
     public void setDescripcionP(String descripcionP) {
         this.descripcionP = descripcionP;
     }
-    
-        public String getImg() {
-        return img;
+
+    public String getImagenP() {
+        return imagenP;
     }
 
-    public void setImg(String img) {
-        this.img = img;
+    public void setImagenP(String imagenP) {
+        this.imagenP = imagenP;
+    }
+
+    public String getFechaP() {
+        return fechaP;
+    }
+
+    public void setFechaP(String fechaP) {
+        this.fechaP = fechaP;
+    }
+
+    public String getLinkP() {
+        return linkP;
+    }
+
+    public void setLinkP(String linkP) {
+        this.linkP = linkP;
     }
 
 }
