@@ -3,11 +3,15 @@
 # 🚀 Backend porfolio 
 > Argentina programa
 
-Base de datos y control de acceso mediante Jwt
+# Portfolio BackEnd
+Este repositorio contiene el código fuente para el backend de mi portafolio personal. El objetivo principal de este proyecto es mostrar algunas de mis habilidades en el desarrollo web y la programación en general.
+
+Funcionalidades
+El backend de mi portafolio personal está diseñado para proporcionar una API RESTful que se utiliza en conjunto con el frontend del portafolio. 
 
 ## Developing
 
-### Technologies / Built With
+### Tecnologías utilizadas
 - ✨ Springboot
 - ✨ Jwt
 - 💣 Java
